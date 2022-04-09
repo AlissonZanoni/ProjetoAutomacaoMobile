@@ -15,8 +15,7 @@ public class DriverSettings {
 
     public AppiumDriver Driver;
     String caminho = ("C://Users//aliss//IdeaProjects//ProjetoAutomacaoMobile//src//apps//teste.apk");
-    String deviceNamePhisical = "RQ8M80TTV3Y";
-    String deviceNameEmulator = "sdk_gphone_x86";
+    String deviceIDPhisical = "RQ8M80TTV3Y";
     String deviceIDEmulator = "emultador-5554";
 
     @BeforeTest
@@ -31,22 +30,10 @@ public class DriverSettings {
 
             Driver = new AndroidDriver(new URL("http://localhost:4723/wd/hub"),caps);
 
-
         } catch(Exception exp){
            System.out.println("Problem is :"+exp.getCause());
            System.out.print("Message is :"+exp.getMessage());
            exp.printStackTrace();
         }
-    }
-
-    @Test
-    public void vaidar(){
-        Driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-        Driver.findElement(By.id("edtUSER")).sendKeys("admin");
-    }
-
-    @AfterTest
-    public void acabou(){
-
     }
 }
